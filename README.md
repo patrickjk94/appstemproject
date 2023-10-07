@@ -2,6 +2,8 @@
 
 running at localhost:3000
 swagger docs at http://localhost:3000/api-docs/#/
+    // https://www.npmjs.com/package/swagger-autogen
+    // 
 
 Appstem Node.js Developer Prototype
 
