@@ -33,10 +33,52 @@
         }
       }
     },
-    "/test": {
+    "/save-url/{url}": {
       "get": {
         "description": "",
         "parameters": [
+          {
+            "name": "url",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "URL to download"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/status/{job_id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The job id to return a status for!"
+          },
           {
             "name": "x-api-key",
             "in": "header",
