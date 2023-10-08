@@ -12,6 +12,9 @@ const ArticleSchema = new mongoose.Schema({
   job_id: {
     type: String,
   },
+  job_status: {
+    type: String, //ENUM?
+  },
   date: { type: Date, default: Date.now },
 });
  

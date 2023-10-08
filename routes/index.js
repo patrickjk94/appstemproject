@@ -76,7 +76,7 @@ router.get('/status/:job_id', checkApiKey, async (req, res) => {
   try {
     const article = await ArticleModel.findOne({ job_id: job_id });
 
-    res.status(200).send(article);
+    res.status(200).send(`Job status is ${article.job_status}`);
     //TODO: Logic of sending status vs full results
   } catch (error) {
     res.status(500).send({ error });

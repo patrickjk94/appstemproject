@@ -7,7 +7,6 @@ class SimpleJobQueue {
   
     addJob(job) {
       this.queue.push(job);
-      //TODO: Update status to be Queued
       this.processNextJob();
     }
   
@@ -18,15 +17,12 @@ class SimpleJobQueue {
   
       this.processing = true;
       const job = this.queue.shift();
-      //TODO: Update status to be Processing 
   
       try {
         await job();
         console.log('Job processed successfully!');
-        // TODO: Update status to be Success  
       } catch (error) {
         console.error('Job failed:', error);
-        // TODO: Update status to be Failed 
       } finally {
         this.processing = false;
         this.processNextJob();
