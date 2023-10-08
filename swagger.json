@@ -23,16 +23,6 @@
     }
   },
   "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/save-url/{url}": {
       "get": {
         "description": "",
@@ -51,17 +41,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
           },
           "400": {
             "description": "Bad Request"
           },
           "403": {
             "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         },
         "security": [
