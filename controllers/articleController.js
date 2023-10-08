@@ -17,23 +17,22 @@ const fetchAndStoreHTML = async (req, res) => {
 
     res.status(200).send(job_id);
   } catch (error) {
-    if (error.response) {
       console.error('Error fetching the webpage:', error);
       res.status(500).send('Error fetching the webpage');
-    } else {
-      console.error('Error:', error);
-      res.status(500).send('An unexpected error occurred');
-    }
   }
 };
 
-const getArticleStatus = async (req, res) => {
+const getArticleAndStatus = async (req, res) => {
   const job_id = req.params.job_id; 
 
   try {
     const article = await ArticleModel.findOne({ job_id: job_id });
 
-    res.status(200).send(`Job status is ${article.job_status}`);
+    if(article.job_status == "COMPLETED") {
+      res.status(200).send(article.content);
+    } else {
+      res.status(200).send(`Job status is ${article.job_status}`);
+    }
   } catch (error) {
     res.status(500).send({ error });
   }
@@ -41,5 +40,5 @@ const getArticleStatus = async (req, res) => {
 
 module.exports = {
   fetchAndStoreHTML,
-  getArticleStatus
+  getArticleAndStatus
 };
