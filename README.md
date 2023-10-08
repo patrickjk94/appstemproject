@@ -1,5 +1,7 @@
 # appstemproject
 
+The Api Key is API_KEY_3c6ad820-2b21-4172-96cf-a4a04eb162ea 
+
 running at localhost:3000
 swagger docs at http://localhost:3000/api-docs/#/
     // https://www.npmjs.com/package/swagger-autogen

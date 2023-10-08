@@ -32,7 +32,7 @@ const doc = {
 
 const outputFile = './swagger.json';
 // const endpointsFiles = ['./path/endpointsUser.js', './path/endpointsBook.js'];
-const endpointsFiles = ['./routes/*.js'];
+const endpointsFiles = ['./routes/index.js'];
 
 
 /* NOTE: if you use the express Router, you must pass in the 
